@@ -1,7 +1,7 @@
 import React from 'react';
-import RequestForm from '../../components/RequestForm/RequestForm.jsx';
+import RequestFormContainer from '../../containers/RequestFormContainer/RequestFormContainer.jsx';
 
 export default function App() {
-  return <RequestForm />;
+  return <RequestFormContainer />;
 }
   
