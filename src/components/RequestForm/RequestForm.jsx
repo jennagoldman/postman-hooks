@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RequestForm = ({ url, onRequestSubmit, onUrlChange }) => {
+const RequestForm = ({ url, onRequestSubmit, onUrlChange }) => (
   <form onSubmit={onRequestSubmit}>
     <input type="text" name="requestUrl" value={url} onChange={onUrlChange} />
-    <input type="radio" name="method" value="get" />
-    <input type="radio" name="method" value="put" />
-    <input type="radio" name="method" value="post" />
-    <input type="radio" name="method" value="delete" />
+    <label htmlFor="get">Get</label>
+    <input type="radio" name="method" value="get" id="get" />
+    <label htmlFor="get">Put</label>
+    <input type="radio" name="method" value="put" id="put" />
+    <label htmlFor="get">Post</label>
+    <input type="radio" name="method" value="post" id="post" />
+    <label htmlFor="get">Delete</label>
+    <input type="radio" name="method" value="delete" id="delete" />
     <button>Submit</button>
-  </form>;
-};
+  </form>
+);
 
 RequestForm.propTypes = {
   url: PropTypes.string.isRequired,

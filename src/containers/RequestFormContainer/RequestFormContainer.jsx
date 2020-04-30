@@ -1,11 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import RequestForm from '../../components/RequestForm/RequestForm.jsx';
 
-const RequestFormContainer = () = {
+const RequestFormContainer = () => {
   const [url, setUrl] = useState('');
 
-  const handleUrlChange =({ target })
+  const handleUrlChange = ({ target }) => {
+    setUrl(target.value);
+  };
+
+  const handleRequestSubmit = (event) => {
+    event.preventDefault();
+    console.log(url);
+  };
+
   return (
-    <RequestForm />
-  )
-}
+    <RequestForm url={url} onUrlChange={handleUrlChange} onRequestSubmit={handleRequestSubmit} />
+  );
+};
+
+export default RequestFormContainer;
+
