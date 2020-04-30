@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const RequestForm = ({ url, method, onRequestSubmit, onMethodChange, onUrlChange }) => (
+const RequestForm = ({ url, method, body, onRequestSubmit, onMethodChange, onUrlChange, onBodyChange }) => (
   <form onSubmit={onRequestSubmit}>
     <input type="text" name="requestUrl" value={url} onChange={onUrlChange} />
     <label htmlFor="get">Get
@@ -16,6 +16,7 @@ const RequestForm = ({ url, method, onRequestSubmit, onMethodChange, onUrlChange
     <label htmlFor="delete">Delete
       <input type="radio" name="method" value="delete" id="delete" onChange={onMethodChange} checked={method === 'delete'} />
     </label>
+    <textarea value={body} onChange={onBodyChange} />
     <button>Submit</button>
   </form>
 );
@@ -23,8 +24,10 @@ const RequestForm = ({ url, method, onRequestSubmit, onMethodChange, onUrlChange
 RequestForm.propTypes = {
   url: PropTypes.string.isRequired,
   method: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
   onUrlChange: PropTypes.func.isRequired,
   onMethodChange: PropTypes.func.isRequired,
+  onBodyChange: PropTypes.func.isRequired,
   onRequestSubmit: PropTypes.func.isRequired,
 };
 
