@@ -1,0 +1,8 @@
+section {
+  height: 600px;
+  overflow: scroll;
+}
+
+.react-json-view {
+  padding: 20px;
+}

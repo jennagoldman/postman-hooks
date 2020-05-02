@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from './RequestForm.css';
 import PropTypes from 'prop-types';
 
 const RequestForm = ({ url, method, body, onRequestSubmit, onMethodChange, onUrlChange, onBodyChange }) => (
   <form onSubmit={onRequestSubmit}>
     <label htmlFor="url">URL: 
-      <input type="text" name="requestUrl" value={url} id="url" onChange={onUrlChange} />
+      <input className={styles.urlInput} type="text" name="requestUrl" value={url} id="url" onChange={onUrlChange} />
     </label>
     <div className="methodsDiv">
       <label htmlFor="get">Get
