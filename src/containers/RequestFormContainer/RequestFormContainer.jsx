@@ -23,9 +23,15 @@ const RequestFormContainer = () => {
   const handleRequestSubmit = (event) => {
     event.preventDefault();
 
+    if(method === 'get' || method === 'delete') {
+      setBody(null);
+    }
+
     fetch(url, {
       method, 
-      body: method !== 'get' ? body.replace(/(\r\n|\n|\r)/gm, ' ').trim() : null, 
+      body: method === 'post' || method === 'put'
+        ? body.replace(/(\r\n|\n|\r)/gm, ' ').trim() 
+        : null, 
       headers: {
         'Content-type': 'application/json; charset=UTF-8'
       } 
