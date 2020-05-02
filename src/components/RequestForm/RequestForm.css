@@ -3,19 +3,73 @@ form {
   /* width: 50%; */
 }
 
-input {
-  margin: 10px;
-  padding: 0 5px;
-  border: 2px solid #1df5f1;
-  font-size: 16px;
+.formSection {
+  /* display: flex;
+  justify-content: space-between; */
+  width: 100%;
+}
+
+.urlDiv {
+  display: inline-block;
+  width: 60%;
 }
 
 .urlInput {
-  width: 60%;
+  width: 97%;
   padding: 5px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.methodsDiv {
+  display: inline-block;
+  width: 30%;
+}
+
+fieldset {
+  border: 1px solid #fc40e6;
+}
+
+.methodsDiv fieldset {
+  padding-top: 21px;
+  padding-right: 10px;
+  padding-bottom: 35px;
+}
+
+input {
+  margin: 10px;
+  padding: 0 5px;
+  border: 1px solid #fc40e6;
+  font-size: 16px;
+  font-family: 'Cairo', sans-serif;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input:checked + label {
+  background: #fc40e6;
+  border: 1px solid #fc40e6;
+  color: #fff;
+  font-weight: 600;
+}
+
+input + label {
+  text-transform: uppercase;
+  padding: 5px 15px;
+  margin: 20px 20px;
+  cursor: pointer;
+  border: 1px solid #fc40e6;
 }
 
 textarea {
-  width: 100%;
-  border: 2px solid rgb(29, 245, 241);
+  width: 98%;
+  height:250px;
+  margin:30px auto;
+  padding: 5px;
+  border: 1px solid #fc40e6;
+  font-size: 16px;
+  font-family: 'Cairo', sans-serif;
+  line-height: 1.25rem;
 }

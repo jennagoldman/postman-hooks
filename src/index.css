@@ -9,4 +9,5 @@ body {
   background: #001121;
   width: 90%;
   margin: 5px auto 50px auto;
+  max-width: 1150px;  
 }

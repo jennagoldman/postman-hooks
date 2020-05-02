@@ -6,7 +6,7 @@ const RequestFormContainer = () => {
   const [url, setUrl] = useState('');
   const [method, setMethod] = useState('');
   const [body, setBody] = useState(null);
-  const [response, setResponse] = useState([]);
+  const [response, setResponse] = useState('');
 
   const handleUrlChange = ({ target }) => {
     setUrl(target.value);
