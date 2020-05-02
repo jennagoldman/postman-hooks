@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import RequestForm from '../../components/RequestForm/RequestForm.jsx';
 import Response from '../../components/Response/Response';
 import RequestHistory from '../../components/RequestHistory/RequestHistory.jsx';
+import makeRequest from '../../services/make-request.js';
 
 const RequestFormContainer = () => {
   const [url, setUrl] = useState('');
@@ -29,17 +30,8 @@ const RequestFormContainer = () => {
       setBody(null);
     }
 
-    fetch(url, {
-      method, 
-      body: method === 'post' || method === 'put'
-        ? body.replace(/(\r\n|\n|\r)/gm, ' ').trim() 
-        : null, 
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8'
-      } 
-    })
-      .then(res => res.json())
-      .then(data => setResponse(data));
+    makeRequest(url, method, body)
+      .then(response => setResponse(response));
 
     setHistory(prevHistory => ([
       ...prevHistory,
