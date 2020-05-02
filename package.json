@@ -25,6 +25,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "react-json-view": "^1.19.1",
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {

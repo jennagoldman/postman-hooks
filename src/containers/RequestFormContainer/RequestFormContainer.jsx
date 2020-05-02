@@ -31,7 +31,7 @@ const RequestFormContainer = () => {
       } 
     })
       .then(res => res.json())
-      .then(data => setResponse(JSON.stringify(data)));
+      .then(data => setResponse(data));
   };
 
   // {
