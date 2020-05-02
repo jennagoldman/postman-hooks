@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import RequestForm from '../../components/RequestForm/RequestForm.jsx';
 import Response from '../../components/Response/Response';
+import RequestHistory from '../../components/RequestHistory/RequestHistory.jsx';
 
 const RequestFormContainer = () => {
   const [url, setUrl] = useState('');
@@ -49,6 +50,7 @@ const RequestFormContainer = () => {
   return (
     <>
       <RequestForm url={url} onUrlChange={handleUrlChange} method={method} onMethodChange={handleMethodChange} body={body} onBodyChange={handleBodyChange} onRequestSubmit={handleRequestSubmit} />
+      <RequestHistory />
       <Response response={response} />
     </>
   );
