@@ -8,6 +8,7 @@ const RequestFormContainer = () => {
   const [method, setMethod] = useState('');
   const [body, setBody] = useState(null);
   const [response, setResponse] = useState('');
+  const [history, setHistory] = useState([]);
 
   const handleUrlChange = ({ target }) => {
     setUrl(target.value);
@@ -39,6 +40,15 @@ const RequestFormContainer = () => {
     })
       .then(res => res.json())
       .then(data => setResponse(data));
+
+    setHistory(prevHistory => ([
+      ...prevHistory,
+      {
+        url,
+        method,
+        body
+      }
+    ]));
   };
 
   // {
@@ -50,7 +60,7 @@ const RequestFormContainer = () => {
   return (
     <>
       <RequestForm url={url} onUrlChange={handleUrlChange} method={method} onMethodChange={handleMethodChange} body={body} onBodyChange={handleBodyChange} onRequestSubmit={handleRequestSubmit} />
-      <RequestHistory />
+      <RequestHistory history={history} />
       <Response response={response} />
     </>
   );
