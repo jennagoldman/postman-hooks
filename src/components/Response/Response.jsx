@@ -8,7 +8,7 @@ const Response = ({ response }) => (
 );
 
 Response.propTypes = {
-  response: PropTypes.string.isRequired
+  response: PropTypes.array.isRequired
 };
 
 export default Response;

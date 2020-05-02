@@ -5,7 +5,7 @@ import Response from '../../components/Response/Response';
 const RequestFormContainer = () => {
   const [url, setUrl] = useState('');
   const [method, setMethod] = useState('');
-  const [body, setBody] = useState('');
+  const [body, setBody] = useState(null);
   const [response, setResponse] = useState([]);
 
   const handleUrlChange = ({ target }) => {
@@ -22,10 +22,23 @@ const RequestFormContainer = () => {
 
   const handleRequestSubmit = (event) => {
     event.preventDefault();
-    fetch(url)
+
+    fetch(url, {
+      method, 
+      body: method !== 'get' ? body.replace(/(\r\n|\n|\r)/gm, ' ').trim() : null, 
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+      } 
+    })
       .then(res => res.json())
-      .then(json => setResponse(JSON.stringify(json)));
+      .then(data => setResponse(JSON.stringify(data)));
   };
+
+  // {
+  //   "title": "foo",
+  //   "body": "bar",
+  //   "userId": 1
+  // }
 
   return (
     <>
