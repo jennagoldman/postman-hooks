@@ -38,7 +38,7 @@ const Response = ({ response }) => (
 );
 
 Response.propTypes = {
-  response: PropTypes.array.isRequired
+  response: PropTypes.any
 };
 
 export default Response;
