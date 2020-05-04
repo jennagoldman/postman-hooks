@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Response matches a snapshot 1`] = `
+<section
+  className="responseSection"
+>
+  <fieldset>
+    <legend>
+      RESPONSE
+    </legend>
+    Response data will display here upon successful request
+  </fieldset>
+</section>
+`;
