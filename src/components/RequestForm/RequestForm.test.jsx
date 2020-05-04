@@ -4,7 +4,7 @@ import RequestForm from './RequestForm.jsx';
 
 describe('RequestForm', () => {
   it('matches a snapshot', () => {
-    const wrapper = shallow(<RequestForm url="http://test.url" onUrlChange={() => {}} onRequestSubmit={() => {}}/>);
+    const wrapper = shallow(<RequestForm url="http://test.url" method="get" onMethodChange={() => {}} body='' onBodyChange ={() => {}} onUrlChange={() => {}} onRequestSubmit={() => {}}/>);
     expect(wrapper).toMatchSnapshot();
   });
 });
