@@ -31,7 +31,7 @@ const Response = ({ response }) => (
           base0E: '#ec66d6',
           base0F: '#ec66d6'
         }}
-      /> : null }
+      /> : 'Response data will display here upon successful request' }
     </fieldset>
   </section>
 
